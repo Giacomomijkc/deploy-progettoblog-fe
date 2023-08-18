@@ -45,9 +45,27 @@
 .yellow {
     color: rgba(226, 213, 31, 0.893);
     font-weight: bolder;
-  }
+}
 
 .post-content{
     font-style: italic;
 }
+
+.content-container {
+    margin: 0; 
+    transition: margin 0.3s ease-in-out; 
+    min-height: 100vh !important;
+    display: flex;
+    flex-direction: column;
+  }
+
+.footer{
+    height: 250px;
+    padding-top: 100px;
+}
+
+ 
+
+
+
 

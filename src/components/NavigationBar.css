@@ -10,7 +10,10 @@
     z-index: 1000;
 }
 
-
+.search{
+  width: 160px !important;
+  /*height: 20px !important;*/  
+}
 
 .avatar{
     width: 30px;
@@ -28,3 +31,10 @@
     color: rgba(226, 213, 31, 0.893);
     font-weight: bolder;
   }
+
+  .button{
+    width: 100px !important;
+    font-size: small !important;
+    margin-bottom: 5px;
+  }
+

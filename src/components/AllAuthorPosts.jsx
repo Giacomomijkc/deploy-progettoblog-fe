@@ -13,12 +13,13 @@ import { Link } from 'react-router-dom';
 import { useTheme } from '../components/ThemeContext';
 
 
-const AllAuthorPosts = ({query, setQuery}) => {
+const AllAuthorPosts = ({query, setQuery, userData}) => {
 
     const {authorId} = useParams();
     const [posts, setPosts] = useState([]);
     const [authorDetails, setAuthorDetails] = useState({});
     const { theme, toggleTheme } = useTheme();
+    const textColorClass = theme === 'dark' ? 'yellow' : 'violet';
 
 
 
@@ -66,12 +67,13 @@ const AllAuthorPosts = ({query, setQuery}) => {
 
   return (
     <>
-    <NavigationBar showSearch={true} query={query} setQuery={setQuery}/>
+    <div className={`${theme === 'dark' ? 'dark-theme' : ''}`}>
+    <NavigationBar showSearch={true} query={query} setQuery={setQuery} userData={userData}/>
     <Container className={`fluid my-5 justify-content-center ${theme === 'dark' ? 'dark-theme' : ''}`}>
         <Row>
             <Col className="col-md-12">
                 <div className='d-flex justify-content-center gap-1 flex-wrap my-5'>
-                    <h1 className='mx-2'>All <span className='violet'>{authorDetails.name}</span>'s articles</h1>
+                    <h1 className='mx-2'>All <span className={textColorClass}>{authorDetails.name}</span>'s articles</h1>
                 </div>
             </Col>
         </Row>
@@ -82,7 +84,7 @@ const AllAuthorPosts = ({query, setQuery}) => {
                     <div className='d-flex justify-content-center gap-2 flex-wrap'>
                     {!query ? (
                         posts.map((post) => (
-                            <Card style={{ width: '20rem' }} key={post._id} className='my-3'>
+                            <Card style={{ width: '20rem' }} key={post._id} className={`my-3 ${theme === 'dark' ? 'dark-theme' : ''}`}>
                                 <Card.Img variant='top' className="fluid cover" src={post.cover} alt="Cover" />
                                 <CardHeader>
                                     <Card.Title>{post.title}</Card.Title>
@@ -124,6 +126,7 @@ const AllAuthorPosts = ({query, setQuery}) => {
             </Row>
         </Container>
         <Footer/>
+        </div>
     </>
   )
 }
