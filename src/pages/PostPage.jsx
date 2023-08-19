@@ -17,7 +17,7 @@ const PostPage = ({authors, getAuthors, comments, userData}) => {
 
     const getPost = async() => {
         try {
-            const data = await fetch (postsApiUrl + `${postId}`);
+            const data = await fetch (`${postsApiUrl}/${postId}`);
             const response = await data.json();
             setPost(response.postById);
             setCommentsPost(response.postById.comments);
