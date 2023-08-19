@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../components/ThemeContext';
 import './login.css';
-const apiUrlLogin = "http://localhost:5050/login"
+const apiUrlLogin = `${process.env.REACT_APP_SERVER_BASE_URL}/login`;
 
 const Login = () => {
     
@@ -71,7 +71,7 @@ const Login = () => {
     };
 
     const handleLoginGitHub =  () => {
-      window.location.href = 'http://localhost:5050/auth/github'
+      window.location.href = `${process.env.REACT_APP_SERVER_BASE_URL}/auth/github`;
     }
 
   return (

@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import DeleteAuthorButton from './DeleteAuthorButton';
 import { useState, useRef } from 'react';
 import { useTheme } from '../components/ThemeContext';
-const apiUrl = "http://localhost:5050/authors/";
+const apiUrl =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors`;
 
 const EditAuthorModal = ({authorId, showEditAuthorModal, handleCloseEditAuthorModal, refreshAuthor, authorPosts}) => {
 

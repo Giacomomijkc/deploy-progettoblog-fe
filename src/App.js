@@ -13,9 +13,9 @@ import ProtectedRoutes from './middlewares/ProtectedRoutes';
 import AllAuthorPosts from './components/AllAuthorPosts';
 import { ThemeProvider } from './components/ThemeContext';
 import './App.css';
-const apiUrl = 'http://localhost:5050/posts';
-const authorsApiUrl = "http://localhost:5050/authors/";
-const commentsApiUrl = "http://localhost:5050/comments/";
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`;
+const authorsApiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/authors` 
+const commentsApiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/comments`;
 
 
 const App = () => {
@@ -73,7 +73,7 @@ const App = () => {
         return <div className='alert alert-warning mt-5' role='alert'>Non autorizzato</div>;
       }
       
-      const response = await fetch('http://localhost:5050/dashboard', {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/dashboard`, {
           method: "GET",
           headers: {
               "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const App = () => {
   
       const dataPosts = await Promise.all(
         posts.map(async (postId) => {
-          const response = await fetch(`http://localhost:5050/posts/${postId}`);
+          const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/${postId}`);
                 
         if (!response.ok) {
           throw new Error('Failed to fetch post details');

@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import EditPostModal from '../components/EditPostModal';
 import EditAuthorModal from '../components/EditAuthorModal';
 import { useTheme } from '../components/ThemeContext';
-const apiUrlPosts = 'http://localhost:5050/posts';
+const apiUrlPosts = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`;
 
 
 const Dashboard = ({userData, postDetails, setPostDetails, fetchUserDataAndPostDetails}) => {

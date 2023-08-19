@@ -11,7 +11,7 @@ import { useLocation } from 'react-router-dom';
 import { useTheme } from '../components/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
-const authorApiUrl = "http://localhost:5050/authors/create";
+const authorApiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/authors/create`;
 
 const Success = () => {
   const { theme } = useTheme();

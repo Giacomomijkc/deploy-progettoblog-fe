@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
-const apiUrl ='http://localhost:5050/authors';
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/authors`; 
 
 
 const DeleteAuthorButton = ({authorId, authorPosts}) => {

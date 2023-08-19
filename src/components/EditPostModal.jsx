@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { useState, useRef } from 'react';
 import DeletePostButton from './DeletePostButton';
 import { useTheme } from '../components/ThemeContext';
-const apiUrl = "http://localhost:5050/posts/";
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`;
 
 const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => {
 
@@ -87,7 +87,7 @@ const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => 
             }
         } else {
             try {
-                const response = await fetch(`http://localhost:5050/posts/${postId}`, {
+                const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/posts/${postId}`, {
                     method: "PATCH",
                     headers: {
 						"Content-Type": "application/json",

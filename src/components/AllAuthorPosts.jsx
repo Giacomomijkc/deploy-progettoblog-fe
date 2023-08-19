@@ -26,7 +26,7 @@ const AllAuthorPosts = ({query, setQuery, userData}) => {
     useEffect(() =>{
         const fetchAuthorPosts = async() =>{
             try {
-                const data = await fetch (`http://localhost:5050/authors/${authorId}/posts`);
+                const data = await fetch (`${process.env.REACT_APP_SERVER_BASE_URL}/authors/${authorId}/posts`);
                 const response = await data.json();
                 setPosts(response.findPost);
                 console.log(response);
@@ -43,7 +43,7 @@ const AllAuthorPosts = ({query, setQuery, userData}) => {
     useEffect(() =>{
         const fetchAuthorDetails = async() =>{
             try {
-                const data = await fetch (`http://localhost:5050/authors/${authorId}`);
+                const data = await fetch (`${process.env.REACT_APP_SERVER_BASE_URL}/authors/${authorId}`);
                 const response = await data.json();
                 setAuthorDetails(response.authorById);
                     

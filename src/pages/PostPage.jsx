@@ -5,7 +5,7 @@ import NavigationBar from '../components/NavigationBar';
 import PostLayout from '../components/PostLayout';
 import Footer from '../components/Footer';
 import { useTheme } from '../components/ThemeContext';
-const postsApiUrl = "http://localhost:5050/posts/";
+const postsApiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`;
 
 const PostPage = ({authors, getAuthors, comments, userData}) => {
 

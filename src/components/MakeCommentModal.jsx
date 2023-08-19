@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import jwt_decode from "jwt-decode";
 import { useTheme } from '../components/ThemeContext';
-const apiUrl = 'http://localhost:5050/comments/create';
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/comments/create`;
 
 const MakeCommentModal = ({postId, show, setShow, handleRefreshPostComments}) => {
 

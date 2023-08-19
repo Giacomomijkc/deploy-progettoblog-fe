@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-const apiUrl ='http://localhost:5050/posts';
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts`;
 
 
 

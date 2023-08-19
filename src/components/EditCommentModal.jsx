@@ -29,7 +29,7 @@ const EditCommentModal = ({commentId, handleIdCommentToEdit, handleRefreshPostCo
         const token = JSON.parse(localStorage.getItem("userLoggedIn"));
 
         try {
-            const response = await fetch(`http://localhost:5050/comments/update/${commentId}`, {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/comments/update/${commentId}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",

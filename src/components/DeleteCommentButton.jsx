@@ -10,7 +10,7 @@ const DeleteCommentButton = ({commentId, handleRefreshPostComments, setSuccessDe
     
         try {
             if (commentId) {
-                const url = `http://localhost:5050/comments/${commentId}`;
+                const url = `${process.env.REACT_APP_SERVER_BASE_URL}/comments/${commentId}`;
                 const requestOptions = {
                     method: "DELETE",
                     headers: {

@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/esm/Col';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useTheme } from '../components/ThemeContext';
-const apiUrl = "http://localhost:5050/posts/create";
-const apiUrlFile = "http://localhost:5050/posts/uploadImg"
+const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts/create`;
+const apiUrlFile = `${process.env.REACT_APP_SERVER_BASE_URL}/posts/uploadImg`;
 
 const CreatePostInput = ({getPosts, getAuthors, getComments}) => {
 

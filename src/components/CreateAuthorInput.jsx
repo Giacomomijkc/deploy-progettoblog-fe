@@ -6,8 +6,8 @@ import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Modal from 'react-bootstrap/Modal';
 import { useTheme } from '../components/ThemeContext';
-const authorApiUrl = "http://localhost:5050/authors/create";
-const apiUrlFile = "http://localhost:5050/authors/uploadImg"
+const authorApiUrl =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors/create`;
+const apiUrlFile =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors/uploadImg`;
 
 const CreateAuthorInput = ({handleCloseCreateAuthorInput, showCreateAuthorInput}) => {
 
