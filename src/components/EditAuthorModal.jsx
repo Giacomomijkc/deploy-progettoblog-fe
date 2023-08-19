@@ -77,7 +77,7 @@ const EditAuthorModal = ({authorId, showEditAuthorModal, handleCloseEditAuthorMo
             }
         } else {
             try {
-                const response = await fetch(`${apiUrl}${authorId}`, {
+                const response = await fetch(`${apiUrl}/${authorId}`, {
                     method: "PATCH",
                     headers: {
 						"Content-Type": "application/json",
