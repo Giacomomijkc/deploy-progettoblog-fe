@@ -51,7 +51,7 @@ const EditAuthorModal = ({authorId, showEditAuthorModal, handleCloseEditAuthorMo
                     avatar: uploadedFile.avatar,
                 };
 
-                const response = await fetch(`${apiUrl}${authorId}`, {
+                const response = await fetch(`${apiUrl}/${authorId}`, {
                     method: "PATCH",
                     headers: {
 						"Content-Type": "application/json",
