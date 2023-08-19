@@ -35,7 +35,7 @@ const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => 
         fileData.append('cover', image);
 
         try {
-            const response = await fetch(`${apiUrl}${postId}/updateImg`, {
+            const response = await fetch(`${apiUrl}/${postId}/updateImg`, {
                 method: "PATCH",
                 body: fileData,
             });
@@ -61,7 +61,7 @@ const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => 
                     cover: uploadedFile.cover,
                 };
 
-                const response = await fetch(`${apiUrl}${postId}`, {
+                const response = await fetch(`${apiUrl}/${postId}`, {
                     method: "PATCH",
                     headers: {
 						"Content-Type": "application/json",
