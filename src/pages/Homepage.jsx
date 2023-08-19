@@ -10,7 +10,8 @@ export const Homepage = ({ posts, query, setQuery, authors, getPosts, getAuthors
 
   useEffect (() => {
     fetchUserDataAndPostDetails();
-  })
+  }, []);
+
   return (
     <>
     <div className={`content-container ${theme === 'dark' ? 'dark-theme' : ''}`}>
