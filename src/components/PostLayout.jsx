@@ -74,7 +74,7 @@ const PostLayout = ({post, authors, getAuthors, author, commentsPost, handleRefr
                     <Row>
                         <Col md={{ span: 8, offset: 2 }} className='centered-content'>
                             {commentsPost && commentsPost.length > 0 && (
-                                <Button variant="primary" onClick={handleShowComment}>
+                                <Button variant="primary" className='mx-2' onClick={handleShowComment}>
                                     Show Comments
                                 </Button>
                             )}
@@ -117,13 +117,13 @@ const PostLayout = ({post, authors, getAuthors, author, commentsPost, handleRefr
                                 }
                                 </div>
                                 {commentsPost && commentsPost.length > 0 && (
-                                <Button variant="primary" onClick={handleCloseComment}>
+                                <Button variant="primary" className='mx-2' onClick={handleCloseComment}>
                                     Close Comments
                                 </Button>
                                 )}
                                 </>
                             }
-                            <Button variant="primary" onClick={handleShow}>
+                            <Button variant="primary" className='mx-2' onClick={handleShow}>
                                 Make a Comment
                             </Button>
                             {handleShow &&(
