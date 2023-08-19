@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import jwt_decode from "jwt-decode";
 import { useTheme } from '../components/ThemeContext';
 const apiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/posts/create`;
-const apiUrlFile = `${process.env.REACT_APP_SERVER_BASE_URL}/posts/uploadImg`;
+const apiUrlFile = `${process.env.REACT_APP_SERVER_BASE_URL}/posts/cloudUpload`;
 
 const CreatePostInput = ({getPosts, getAuthors, getComments}) => {
 

@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/esm/Col';
 import Modal from 'react-bootstrap/Modal';
 import { useTheme } from '../components/ThemeContext';
 const authorApiUrl =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors/create`;
-const apiUrlFile =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors/uploadImg`;
+const apiUrlFile =  `${process.env.REACT_APP_SERVER_BASE_URL}/authors/cloudUpload`;
 
 const CreateAuthorInput = ({handleCloseCreateAuthorInput, showCreateAuthorInput}) => {
 
