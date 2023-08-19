@@ -81,7 +81,7 @@ const Login = () => {
     <Container className={`fluid mt-5 d-flex justify-content-center align-items-center ${theme === 'dark' ? 'dark-theme' : ''}`} style={{marginBottom: "300px"}}>
             <Row>
                 <Col className='col-md-10'>
-                    <Form style={{ width: '30rem'}} onSubmit={onSubmit}>
+                    <Form style={{ width: '20rem'}} onSubmit={onSubmit}>
                         <Form.Group className="mb-3" controlId="createAuthorForm.ControlInput1">
                             <Form.Label>Email</Form.Label>
                             <Form.Control 
