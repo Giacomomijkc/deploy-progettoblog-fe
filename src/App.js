@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, BrowserRouter, Routes, Route} from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import CreatePostPage from './pages/CreatePostPage';
 import CreateAuthorPage from './pages/CreateAuthorPage';
@@ -121,7 +121,7 @@ const App = () => {
     <>
     <ThemeProvider>
     <div className='app-container'>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route exact path="/" element={<Homepage 
           posts={posts} 
@@ -146,7 +146,7 @@ const App = () => {
         <Route exact path="/success" element={<Success  />}/>
         <Route path="*" element={<ErrorPage showSearch={false} userData={userData} fetchUserDataAndPostDetails={fetchUserDataAndPostDetails}/>}/>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </div>
     </ThemeProvider>
     </>
