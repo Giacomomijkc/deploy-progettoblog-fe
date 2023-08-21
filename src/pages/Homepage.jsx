@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import NavigationBar from '../components/NavigationBar';
 import AllPosts from '../components/AllPosts';
 import Footer from '../components/Footer';
-import './homepage.css'
 import { useTheme } from '../components/ThemeContext';
 
 export const Homepage = ({ posts, query, setQuery, authors, getPosts, getAuthors, getComments,userData, totalPages, postsPerPage, fetchUserDataAndPostDetails }) => {

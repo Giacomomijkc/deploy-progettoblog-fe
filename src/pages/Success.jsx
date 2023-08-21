@@ -15,7 +15,6 @@ const authorApiUrl = `${process.env.REACT_APP_SERVER_BASE_URL}/authors/create`;
 
 const Success = () => {
   const { theme } = useTheme();
-  //const location = useLocation();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({

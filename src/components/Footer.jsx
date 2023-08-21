@@ -1,7 +1,6 @@
 import React from 'react'
 import logo from '../assets/logo.png';
 import { useTheme } from './ThemeContext';
-import './footer.css';
 
 const Footer = () => {
   const { theme } = useTheme();

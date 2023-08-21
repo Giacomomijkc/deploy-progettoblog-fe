@@ -74,7 +74,6 @@ const App = () => {
       const token = JSON.parse(localStorage.getItem("userLoggedIn"));
       
       if (!token) {
-        // Il token non è presente, gestire il caso in cui l'utente non sia autenticato
         return <div className='alert alert-warning mt-5' role='alert'>Non autorizzato</div>;
       }
       
@@ -87,12 +86,11 @@ const App = () => {
       });
       
       if (!response.ok) {
-        // Gestisci il caso in cui la richiesta fallisca o l'utente non sia autorizzato
         return;
       }
       
       const data = await response.json();
-      setUserData(data); // Imposta i dati dell'utente nello stato locale
+      setUserData(data); 
       console.log(data)
   
   

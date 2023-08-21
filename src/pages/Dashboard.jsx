@@ -49,7 +49,6 @@ const Dashboard = ({userData, postDetails, setPostDetails, fetchUserDataAndPostD
       }
     
       if (!userData) {
-        // Mostra un messaggio di caricamento o gestisci il caso in cui i dati non siano ancora disponibili
         return <div className='alert alert-info mt-5' role='alert'>Loading...</div>;
       }
 
