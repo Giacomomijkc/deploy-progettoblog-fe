@@ -34,7 +34,7 @@ const App = () => {
 
   const getPosts = async (page) => {
     try {
-      const apiUrlWithPage = `http://localhost:5050/posts?page=${page}`;
+      const apiUrlWithPage = `${apiUrl}?page=${page}`;
       const data = await fetch(apiUrlWithPage);
       const response = await data.json();
       console.log(response)
