@@ -2,15 +2,24 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/esm/Container';
 import Col from 'react-bootstrap/Col';
 import SinglePost from './SinglePost';
+import Pagination from 'react-bootstrap/Pagination';
 import {useEffect } from 'react';
 import { useTheme } from './ThemeContext';
 
-const AllPosts = ({posts, query, authors, getPosts, getAuthors, getComments}) => {
+const AllPosts = ({posts, query, authors, getPosts, getAuthors, getComments, totalPages, postsPerPage}) => {
     const { theme } = useTheme();
 
+    const [currentPage, setCurrentPage] = useState(1);
+
+    console.log(currentPage)
+    console.log(totalPages)
+
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+
     useEffect(() => {
-        getPosts();
-      },[])
+        getPosts(currentPage);
+      }, [currentPage]);
 
     useEffect(() => {
         getAuthors();
@@ -34,7 +43,8 @@ const AllPosts = ({posts, query, authors, getPosts, getAuthors, getComments}) =>
             return null;
           };
           
-              
+    const postsToDisplay = query !== '' ? filteredPosts : posts;
+    const currentPosts = postsToDisplay.slice(startIndex, endIndex);  
           
 
     if (!posts) {
@@ -46,23 +56,27 @@ const AllPosts = ({posts, query, authors, getPosts, getAuthors, getComments}) =>
             <Container className={`fluid justify-content-center ${theme === 'dark' ? 'dark-theme' : ''}`}>
             <Row>
                 <Col className="col-md-12">
-                    <div className='d-flex justify-content-center gap-2 flex-wrap'>
-                        {query !== '' ? (
-                            filteredPosts.map((filteredPost) =>(
-                                <SinglePost 
-                                key = {filteredPost._id}
-                                post = {filteredPost}
-                                author={findAuthorForPost(filteredPost._id)}
-                                />
-                            ))
-                        ) : (posts && 
-                            posts.map((post) => (
-                                <SinglePost 
-                                key= {post._id}
-                                post = {post} 
-                                author={findAuthorForPost(post._id)}                           
-                                />)
+                <div className='d-flex justify-content-center gap-2 flex-wrap'>
+                    {currentPosts && currentPosts.map((currentPost)=> (
+                           <SinglePost 
+                           key = {currentPost._id}
+                           post = {currentPost}
+                           author={findAuthorForPost(currentPost._id)}
+                           />
+                    ))} 
+                    </div>
+                    <div >
+                    <Pagination className="mt-4 justify-content-center">
+                        {Array.from({ length: totalPages }, (_, index) => (
+                            <Pagination.Item
+                            key={index + 1}
+                            active={index + 1 === currentPage}
+                            onClick={() => setCurrentPage(index + 1)}
+                            >
+                            {index + 1}
+                            </Pagination.Item>
                         ))}
+                    </Pagination>
                     </div>
                 </Col>
             </Row>

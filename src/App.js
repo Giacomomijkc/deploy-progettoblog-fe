@@ -27,19 +27,24 @@ const App = () => {
 
   const [userData, setUserData] = useState(null);
   const [postDetails, setPostDetails] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(6);
 
-  const getPosts = async() => {
+
+
+  const getPosts = async (page) => {
     try {
-      const data = await fetch(apiUrl);
+      const apiUrlWithPage = `http://localhost:5050/posts?page=${page}`;
+      const data = await fetch(apiUrlWithPage);
       const response = await data.json();
       console.log(response)
-      setPosts(response.posts);
-      console.log(posts)
-      
+      setPosts([...posts, ...response.posts]);
+      setTotalPages(Math.ceil(response.totalPosts / postsPerPage));
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
+
 
   const getAuthors = async () => {
     try {
@@ -132,6 +137,8 @@ const App = () => {
           getAuthors={getAuthors}
           getComments={getComments}
           userData ={userData}
+          totalPages={totalPages}
+          postsPerPage ={postsPerPage}
           fetchUserDataAndPostDetails = {fetchUserDataAndPostDetails}
           />} />
         <Route exact path="/login" element={<Login />}/>
