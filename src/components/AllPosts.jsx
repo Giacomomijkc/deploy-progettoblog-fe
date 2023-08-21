@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/esm/Container';
 import Col from 'react-bootstrap/Col';
 import SinglePost from './SinglePost';
 import Pagination from 'react-bootstrap/Pagination';
-import {useEffect } from 'react';
+import {useEffect, useState } from 'react';
 import { useTheme } from './ThemeContext';
 
 const AllPosts = ({posts, query, authors, getPosts, getAuthors, getComments, totalPages, postsPerPage}) => {
