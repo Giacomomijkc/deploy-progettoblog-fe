@@ -114,7 +114,7 @@ const EditAuthorModal = ({authorId, showEditAuthorModal, handleCloseEditAuthorMo
         </Modal.Header>
 
         <Modal.Body className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
-        <Form style={{ width: '30rem'}} encType='multipart/form-data' onSubmit={submitForm} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
+        <Form style={{ width: '20rem'}} encType='multipart/form-data' onSubmit={submitForm} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
                         <Form.Group className="mb-3" controlId="createAuthorForm.ControlInput1">
                             <Form.Label>Name</Form.Label>
                             <Form.Control 

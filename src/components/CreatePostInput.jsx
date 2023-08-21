@@ -126,7 +126,7 @@ const CreatePostInput = ({getPosts, getAuthors, getComments}) => {
 <Container className='fluid mt-5 d-flex justify-content-center align-items-center'>
 <Row >
     <Col className={` col-md-10 ${theme === 'dark' ? 'dark-theme' : ''}`}>
-        <Form style={{ width: '30rem'}} encType='multipart/form-data' onSubmit={submitForm} className={`mb-5 ${theme === 'dark' ? 'dark-theme' : ''}`}>
+        <Form style={{ width: '20rem'}} encType='multipart/form-data' onSubmit={submitForm} className={`mb-5 ${theme === 'dark' ? 'dark-theme' : ''}`}>
             <Form.Group className="mb-3" controlId="createPostForm.ControlInput1">
                 <Form.Label>Title</Form.Label>
                 <Form.Control 

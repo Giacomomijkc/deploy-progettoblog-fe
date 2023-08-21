@@ -148,7 +148,7 @@ const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => 
       </Modal.Header>
 
       <Modal.Body className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
-      <Form style={{ width: '30rem'}} encType='multipart/form-data' onSubmit={submitForm} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
+      <Form style={{ width: '20rem'}} encType='multipart/form-data' onSubmit={submitForm} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
             <Form.Group className="mb-3" controlId="createPostForm.ControlInput1">
                 <Form.Label>Title</Form.Label>
                 <Form.Control 
@@ -225,6 +225,7 @@ const EditPostModal = ({postId, authorId, handleIdPostToEdit, refreshPosts}) => 
             <Button
             type="submit"
             variant="success"
+            className='me-1'
             >Edit Post</Button>
             <DeletePostButton refreshPosts={refreshPosts} authorId={authorId} postId={postId}>Delete Post</DeletePostButton>
         </Form>

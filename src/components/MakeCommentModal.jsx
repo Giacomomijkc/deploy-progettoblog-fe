@@ -69,7 +69,7 @@ const MakeCommentModal = ({postId, show, setShow, handleRefreshPostComments}) =>
                                     <Modal.Title>Create Your Comment</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
-                                    <Form style={{ width: '30rem'}} onSubmit={submitNewComment} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
+                                    <Form style={{ width: '20rem'}} onSubmit={submitNewComment} className={` ${theme === 'dark' ? 'dark-theme' : ''}`}>
                                         <Form.Group className="mb-3" controlId="createPostForm.ControlInput1">
                                             <Form.Label>Rate</Form.Label>
                                             <Form.Control 
