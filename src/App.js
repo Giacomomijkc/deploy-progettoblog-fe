@@ -28,7 +28,7 @@ const App = () => {
   const [userData, setUserData] = useState(null);
   const [postDetails, setPostDetails] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage, setPostsPerPage] = useState(3);
 
 
 
